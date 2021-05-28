@@ -36,7 +36,7 @@ public class AdapterListView extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ListViewItem listViewItem = null;
         if(convertView == null){
-            convertView = View.inflate(parent.getContext(),R.layout.customelistview,null);
+            convertView = View.inflate(parent.getContext(),R.layout.listviewrow,null);
             listViewItem = new ListViewItem();
             listViewItem.name = convertView.findViewById(R.id.Nametxt);
             listViewItem.ngaythi = convertView.findViewById(R.id.giothi);
