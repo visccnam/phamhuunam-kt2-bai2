@@ -26,16 +26,7 @@ public class DatabaseSQL extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
-    public Long Add(Lich c){
-        ContentValues values = new ContentValues();
-        values.put("Name",c.getName());
-        values.put("Times",c.getTimes());
-        values.put("Dates",c.getDates());
-        values.put("ischecked",Float.parseFloat(c.getIschecked()));
-        SQLiteDatabase sqLiteDatabase =getWritableDatabase();
-        return sqLiteDatabase.insert("Thi",null,values);
 
-    }
     public int update(Lich c){
         ContentValues values = new ContentValues();
         values.put("Name",c.getName());
@@ -86,6 +77,17 @@ public class DatabaseSQL extends SQLiteOpenHelper {
 
         }
         return list;
+    }
+
+    public Long Add(Lich c){
+        ContentValues values = new ContentValues();
+        values.put("Name",c.getName());
+        values.put("Times",c.getTimes());
+        values.put("Dates",c.getDates());
+        values.put("ischecked",Float.parseFloat(c.getIschecked()));
+        SQLiteDatabase sqLiteDatabase =getWritableDatabase();
+        return sqLiteDatabase.insert("Thi",null,values);
+
     }
 
     @Override

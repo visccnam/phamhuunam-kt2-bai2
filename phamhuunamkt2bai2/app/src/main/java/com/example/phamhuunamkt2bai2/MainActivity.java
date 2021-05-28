@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     EditText name , time , dates;
     CheckBox checkBox;
     TextView tongsomon;
-    Button add,update,delete,search;
+    Button addbtn,updatebtn,deletebtn,searchbtn;
     int t1h,t1m;
     int pos;
     int idd;
@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
         tongsomon = findViewById(R.id.tongsomon);
         dates = findViewById(R.id.dates);
         checkBox = findViewById(R.id.checkboxtv);
-        add= findViewById(R.id.addbtn);
-        update = findViewById(R.id.updatebtn);
-        delete = findViewById(R.id.deletebtn);
-        search = findViewById(R.id.searchbtn);
+        addbtn= findViewById(R.id.addbtn);
+        updatebtn = findViewById(R.id.updatebtn);
+        deletebtn = findViewById(R.id.deletebtn);
+        searchbtn = findViewById(R.id.searchbtn);
         listView = findViewById(R.id.listview);
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        update.setOnClickListener(new View.OnClickListener() {
+        updatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String ten = name.getText().toString();
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 adapterListView.notifyDataSetChanged();
             }
         });
-        delete.setOnClickListener(new View.OnClickListener() {
+        deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar calendar2 = Calendar.getInstance();
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         });
         adapterListView = new AdapterListView(arrayList);
         listView.setAdapter(adapterListView);
-        add.setOnClickListener(new View.OnClickListener() {
+        addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String ten = name.getText().toString();
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 adapterListView.notifyDataSetChanged();
             }
         });
-        search.setOnClickListener(new View.OnClickListener() {
+        searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String ten = name.getText().toString();
