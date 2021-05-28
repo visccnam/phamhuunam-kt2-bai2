@@ -7,10 +7,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class AdapterListView extends BaseAdapter {
+public class ListviewAdapter extends BaseAdapter {
     ArrayList<Lich> arrayList;
 
-    public AdapterListView(ArrayList<Lich> arrayList) {
+    public ListviewAdapter(ArrayList<Lich> arrayList) {
         this.arrayList = arrayList;
     }
     public class ListViewItem{

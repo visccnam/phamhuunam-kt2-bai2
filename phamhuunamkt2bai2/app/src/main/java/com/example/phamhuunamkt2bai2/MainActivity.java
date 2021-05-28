@@ -25,7 +25,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Lich> arrayList = new ArrayList<>();
-    AdapterListView adapterListView;
+    ListviewAdapter listviewAdapter;
     ListView listView;
     EditText name , time , dates;
     CheckBox checkBox;
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                adapterListView.notifyDataSetChanged();
+                listviewAdapter.notifyDataSetChanged();
             }
         });
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                         arrayList.remove(pos);
 
                     }
-                    adapterListView.notifyDataSetChanged();
+                    listviewAdapter.notifyDataSetChanged();
                 }
                 else {
                     Toast.makeText(MainActivity.this, "Date Thi < Date current", Toast.LENGTH_LONG).show();
@@ -166,8 +166,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        adapterListView = new AdapterListView(arrayList);
-        listView.setAdapter(adapterListView);
+        listviewAdapter = new ListviewAdapter(arrayList);
+        listView.setAdapter(listviewAdapter);
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                adapterListView.notifyDataSetChanged();
+                listviewAdapter.notifyDataSetChanged();
             }
         });
         searchbtn.setOnClickListener(new View.OnClickListener() {
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                 for(Lich c: array){
                     arrayList.add(c);
                 }
-                adapterListView.notifyDataSetChanged();
+                listviewAdapter.notifyDataSetChanged();
             }
         });
     }
