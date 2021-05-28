@@ -12,21 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/citytxt"
+        android:id="@+id/ngaythi"
         android:layout_marginLeft="10dp"
         android:text="Ha Noi"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/datetxt"
+        android:id="@+id/giothi"
         android:layout_marginLeft="10dp"
         android:text="21/06/1999"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/amounttxt"
+        android:id="@+id/amount"
         android:layout_marginLeft="10dp"
         android:text=""
         android:textStyle="bold"

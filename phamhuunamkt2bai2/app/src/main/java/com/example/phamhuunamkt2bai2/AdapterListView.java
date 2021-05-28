@@ -14,7 +14,7 @@ public class AdapterListView extends BaseAdapter {
         this.arrayList = arrayList;
     }
     public class ListViewItem{
-        TextView name,city,date,amount;
+        TextView name,ngaythi,giothi,tongsomon;
     }
 
     @Override
@@ -39,9 +39,9 @@ public class AdapterListView extends BaseAdapter {
             convertView = View.inflate(parent.getContext(),R.layout.customelistview,null);
             listViewItem = new ListViewItem();
             listViewItem.name = convertView.findViewById(R.id.Nametxt);
-            listViewItem.city = convertView.findViewById(R.id.citytxt);
-            listViewItem.date = convertView.findViewById(R.id.datetxt);
-            listViewItem.amount = convertView.findViewById(R.id.amounttxt);
+            listViewItem.ngaythi = convertView.findViewById(R.id.giothi);
+            listViewItem.giothi = convertView.findViewById(R.id.ngaythi);
+            listViewItem.tongsomon = convertView.findViewById(R.id.amount);
             convertView.setTag(listViewItem);
         }
         else {
@@ -49,9 +49,9 @@ public class AdapterListView extends BaseAdapter {
         }
         Lich lich = arrayList.get(position);
         listViewItem.name.setText(lich.getName());
-        listViewItem.date.setText(lich.getDates());
-        listViewItem.city.setText(lich.getTimes());
-        listViewItem.amount.setText(lich.getIschecked());
+        listViewItem.ngaythi.setText(lich.getDates());
+        listViewItem.giothi.setText(lich.getTimes());
+        listViewItem.tongsomon.setText(lich.getIschecked());
         return convertView;
     }
 }
