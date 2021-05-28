@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkBox;
     TextView tongsomon;
     Button addbtn,updatebtn,deletebtn,searchbtn;
-    int t1h,t1m;
+    int h1,m1;
     int pos;
     int idd;
 
@@ -63,15 +63,15 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        t1h = hourOfDay;
-                        t1m = minute;
+                        h1 = hourOfDay;
+                        m1 = minute;
                         Calendar calendar1 = Calendar.getInstance();
-                        calendar1.set(0,0,0,t1h,t1m);
+                        calendar1.set(0,0,0,h1,m1);
                         time.setText(DateFormat.format("hh:mm aa",calendar1));
                     }
                 },12,0,false
                 );
-                timePickerDialog.updateTime(t1h,t1m);
+                timePickerDialog.updateTime(h1,m1);
                 timePickerDialog.show();
             }
         });
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         database.queryData("CREATE TABLE IF NOT EXISTS " +
                 "Thi(Id INTEGER PRIMARY KEY AUTOINCREMENT, Name varchar(200) , Times varchar(200) , Dates date , ischecked float) ");
         //  database.queryData("INSERT INTO Thi VALUES(null,'Le Thi Thuy Dung','13:30','5-28-2021',1)");
-        final List<Lich> array = database.SearchbyName("");
+        final List<Lich> array = database.search("");
         int sum =0;
         for(Lich c: array){
             arrayList.add(c);
@@ -179,12 +179,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 String date = dates.getText().toString();
                 Lich c = new Lich("",ten,amounts,date,ischecked);
-                Long result = database.Add(c);
+                Long result = database.add(c);
                 if(result > 0){
                     Toast.makeText(MainActivity.this,"Success",Toast.LENGTH_LONG).show();
                     if(arrayList != null)
                     {arrayList.clear();}
-                    List<Lich> array = database.SearchbyName("");
+                    List<Lich> array = database.search("");
                     for(Lich cs: array){
                         arrayList.add(cs);
                     }
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 String ten = name.getText().toString();
                 if(arrayList != null)
                 {arrayList.clear();}
-                List<Lich> array = database.SearchbyName(ten);
+                List<Lich> array = database.search(ten);
                 for(Lich c: array){
                     arrayList.add(c);
                 }

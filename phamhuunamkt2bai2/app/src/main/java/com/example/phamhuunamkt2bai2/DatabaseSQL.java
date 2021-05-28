@@ -45,7 +45,7 @@ public class DatabaseSQL extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         return sqLiteDatabase.delete("Thi",clause,values);
     }
-    public List<Lich> SearchbyName(String name){
+    public List<Lich> search(String name){
         List<Lich> list = new ArrayList<>();
         if(name.equals("")){
             String sql ="SELECT * FROM Thi";
@@ -79,7 +79,7 @@ public class DatabaseSQL extends SQLiteOpenHelper {
         return list;
     }
 
-    public Long Add(Lich c){
+    public Long add(Lich c){
         ContentValues values = new ContentValues();
         values.put("Name",c.getName());
         values.put("Times",c.getTimes());
