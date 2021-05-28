@@ -33,25 +33,25 @@ public class ListviewAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View view, ViewGroup parent) {
         ListViewItem listViewItem = null;
-        if(convertView == null){
-            convertView = View.inflate(parent.getContext(),R.layout.listviewrow,null);
+        if(view == null){
+            view = View.inflate(parent.getContext(),R.layout.listviewrow,null);
             listViewItem = new ListViewItem();
-            listViewItem.name = convertView.findViewById(R.id.Nametxt);
-            listViewItem.ngaythi = convertView.findViewById(R.id.giothi);
-            listViewItem.giothi = convertView.findViewById(R.id.ngaythi);
-            listViewItem.tongsomon = convertView.findViewById(R.id.amount);
-            convertView.setTag(listViewItem);
+            listViewItem.name = view.findViewById(R.id.Nametxt);
+            listViewItem.ngaythi = view.findViewById(R.id.giothi);
+            listViewItem.giothi = view.findViewById(R.id.ngaythi);
+            listViewItem.tongsomon = view.findViewById(R.id.amount);
+            view.setTag(listViewItem);
         }
         else {
-        listViewItem =(ListViewItem) convertView.getTag();
+        listViewItem =(ListViewItem) view.getTag();
         }
         Lich lich = arrayList.get(position);
         listViewItem.name.setText(lich.getName());
         listViewItem.ngaythi.setText(lich.getDates());
         listViewItem.giothi.setText(lich.getTimes());
         listViewItem.tongsomon.setText(lich.getIschecked());
-        return convertView;
+        return view;
     }
 }
