@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context="com.example.phamhuunamkt2bai2.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:text="Tên môn học:"
+            android:textColor="#3F51B5"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:text="Ngày thi:"
+            android:textColor="#009688"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/dates"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Chon ngay"
+            android:textColor="#009688"
+            android:textSize="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:text="Gio Thi:"
+                android:textColor="#009688"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Chon gio"
+                android:textColor="#009688"
+                android:textSize="15dp" />
+        </LinearLayout>
+        <CheckBox
+            android:id="@+id/checkboxtv"
+            android:text="Thi viết"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addbtn"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:backgroundTint="#2196F3"
+                android:text="ADD"
+                android:textColor="#FAFAFA"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/updatebtn"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:backgroundTint="#2196F3"
+                android:text="UPDATE"
+                android:textColor="#FAFAFA"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/deletebtn"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:backgroundTint="#2196F3"
+                android:text="DELETE"
+                android:textColor="#FAFAFA"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/searchbtn"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:backgroundTint="#2196F3"
+                android:text="SEARCH"
+                android:textColor="#FAFAFA"
+                android:textSize="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="Tổng số môn lich viết : "
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tongsomon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <ListView
+            android:layout_marginTop="10dp"
+            android:id="@+id/listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>
